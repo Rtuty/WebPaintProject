@@ -2,10 +2,13 @@ const configMarker = {
     'lineSize': 5,
     'color': 'black'
 }
-
 const configPencil = {
     'lineSize': 2,
     'color': 'gray'
+}
+const configBrush = {
+    'lineSize': 3.5,
+    'color': 'red'
 }
 
 window.onload = () => {
@@ -17,15 +20,49 @@ window.onload = () => {
     const button = document.getElementById('deleteButton')
 
     // Устанавливаем размер холста
-    canvas.setAttribute('width',500);
+    canvas.setAttribute('width',1500);
     canvas.setAttribute('height', 500);
 
-    // Инициализируем стиль кисти
-    ctx.lineWidth = configMarker.lineSize;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = configMarker.color;
-    ctx.fillStyle = configMarker.color;
+    // Иннициализация свойств маркера
+    var buttonMarker = document.getElementById("markerId")
+    buttonMarker.addEventListener("click", (e) => marker());
+    function marker () {
+        ctx.lineWidth = configMarker.lineSize;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = configMarker.color;
+        ctx.fillStyle = configMarker.color;
+    }
+
+    // Иннициализация свойств карандаша
+    var buttonPencil = document.getElementById("pencilId")
+    buttonPencil.addEventListener("click",(e)=>pencil())
+    function pencil () {
+        ctx.lineWidth = configPencil.lineSize;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = configPencil.color;
+        ctx.fillStyle = configPencil.color;
+    }
+
+    // Иннициализация свойств кисти
+    var buttonBrush = document.getElementById("brushId")
+    buttonBrush.addEventListener("click",(e)=>brush())
+    function brush () {
+        ctx.lineWidth = configBrush.lineSize;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = configBrush.color;
+        ctx.fillStyle = configBrush.color;
+    }
+
+    var buttonDelete = document.getElementById("clear")
+    buttonDelete.addEventListener("click", (e) => deleteDataCanvas());
+
+    function deleteDataCanvas() {
+        ctx.clearRect(0, 0, 1500, 500);
+    }
+
 
     var isRec = false,
         newDraw = false,
@@ -42,7 +79,7 @@ window.onload = () => {
     // Когда мышь отпущена
     canvas.addEventListener("mouseup", () => stopDrawing());
 
-    // При нажатии на пробел
+    // При нажатии на enter
     document.addEventListener("keydown", (e) => {
         if(e.code == "Enter") {
             if(!isRec) {
@@ -57,9 +94,9 @@ window.onload = () => {
 
     // Добавляем позиции X и Y мыши в массимы arrayX и arrayY
     function recordMousePos(e) {
-        posX.push(e.clientX);
-        posY.push(e.clientY);
-        drawLine(e.clientX, e.clientY);
+        posX.push(e.clientX-10);
+        posY.push(e.clientY-45);
+        drawLine(e.clientX-10, e.clientY-45);
     }
 
     // Рисование линий

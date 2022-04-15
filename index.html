@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +13,27 @@
 <div id="indicator" class="isWrite"></div>
 <button class="button" id="clear">Очистить холст</button>
 <canvas id="canvas"></canvas>
-<div class="list">
+<div class="listInstrument">
     <details>
         <summary> <strong> Выберите инструмент для рисования </strong></summary>
         <ol>
-            <li><button>Карандаш</button></li>
-            <li><button>Маркер</button></li>
-            <li><button>Кисть</button></li>
-            <li><button>Ластик</button></li>
+            <li><button id="pencilId">Карандаш</button></li>
+            <li><button id="markerId">Маркер</button></li>
+            <li><button id="brushId">Кисть</button></li>
+            <li><button id="rubberId">Ластик</button></li>
+        </ol>
+    </details>
+</div>
+<div>
+    <details>
+        <summary> <strong> Выберите цвет кисти </strong></summary>
+        <ol>
+            <li><button id="black">Черный</button></li>
+            <li><button id="purple">Фиолетовый</button></li>
+            <li><button id="red">Красный</button></li>
+            <li><button id="blue">Синий</button></li>
+            <li><button id="green">Зелёный</button></li>
+            <li><button id="yellow">Желтый</button></li>
         </ol>
     </details>
 </div>
