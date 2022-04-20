@@ -6,7 +6,7 @@
 canvas {
   display: block;
   background-color: #c0c0c0;
-  margin: 0px 32px 0px 10px;
+  margin: 0px 32px 0px 20px;
 }
 
 button {
@@ -18,10 +18,14 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 10px;
-  margin: 0px 32px 5px 10px;
+  margin: 0px 32px 5px 20px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border-radius: 15px;
+}
+button:hover {
+  background-color: white;
+  color: #5178ff;
 }
 button#clear {
   background-color: #ff0000;
@@ -50,6 +54,10 @@ button#pipetteId:hover {
   background-color: lightsalmon;
   color: white;
 }
+buttonhover {
+  background-color: darkgray;
+  color: white;
+}
 
 #indicator {
   position: absolute;
@@ -57,11 +65,20 @@ button#pipetteId:hover {
   height: 40px;
   border-radius: 50%;
   background-color: red;
-  margin: 0px 32px 5px 150px;
+  margin: 0px 32px 5px 160px;
 }
 
 .isWrite {
   background-color: #5178ff !important;
+}
+
+.autorsLink {
+  padding: 10px 15px;
+  margin: 10px 5px 10px 10px;
+}
+
+.textH4 {
+  margin: 10px 5px 10px 20px;
 }
 
 #sketch {
@@ -73,7 +90,7 @@ button#pipetteId:hover {
   z-index: -1;
 }
 
-.listInstrument {
+summary {
   margin: 0px 0px 10px 20px;
 }
 
