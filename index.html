@@ -14,6 +14,7 @@
 <header>
     <div id="indicator" class="isWrite"></div>
     <button class="button" id="clear">Очистить холст</button>
+    <button class="button" id="autoDraw">Посмотреть процесс</button>
 </header>
 <sidebar>
 <div class="sidenav">
@@ -24,20 +25,16 @@
 </div>
 </sidebar>
 <main>
-    <!-- <div class="layout">
-        <div class="sidebar">Column 1</div>
-        <div class="content">Column 2</div>
-    </div> -->
     <canvas id="canvas"></canvas>
     <div class="listInstrument">
         <details>
             <summary> <strong> Выберите инструмент для рисования </strong></summary>
             <ol>
-                <li><button id="pencilId">Карандаш</button></li>
-                <li><button id="markerId">Маркер</button></li>
-                <li><button id="brushId">Кисть</button></li>
-                <li><button id="rubberId">Ластик</button></li>
-                <li><button id="pipetteId">Пипетка</button></li>
+                <li><button class="buttonInstrument" id="pencilId">Карандаш</button></li>
+                <li><button class="buttonInstrument" id="markerId">Маркер</button></li>
+                <li><button class="buttonInstrument" id="brushId">Кисть</button></li>
+                <li><button class="buttonInstrument" id="rubberId">Ластик</button></li>
+                <li><button class="buttonInstrument" id="pipetteId">Пипетка</button></li>
             </ol>
         </details>
     </div>
