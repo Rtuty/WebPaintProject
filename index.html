@@ -7,6 +7,7 @@
     <title>Рисовалка онлайн</title>
     <link rel="icon" type="image/x-icon" href="./images/icon.png">
     <link rel="stylesheet" href="styles/style.css">
+<<<<<<< HEAD
     <script src="script.js"></script>
 </head>
 <body>
@@ -37,5 +38,58 @@
         </ol>
     </details>
 </div>
+=======
+    <link rel="stylesheet" href="http://cdn.webix.com/edge/webix.css">
+    <script src="http://cdn.webix.com/edge/webix.js"></script>
+</head>
+<body>
+<header>
+    <div id="indicator" class="isWrite"></div>
+    <button class="button" id="clear">Очистить холст</button>
+    <button class="button" id="autoDraw">Посмотреть процесс</button>
+</header>
+<sidebar>
+<div class="sidenav">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+</sidebar>
+<main>
+    <canvas id="canvas"></canvas>
+    <div class="listInstrument">
+        <details>
+            <summary> <strong> Выберите инструмент для рисования </strong></summary>
+            <ol>
+                <li><button class="buttonInstrument" id="pencilId">Карандаш</button></li>
+                <li><button class="buttonInstrument" id="markerId">Маркер</button></li>
+                <li><button class="buttonInstrument" id="brushId">Кисть</button></li>
+                <li><button class="buttonInstrument" id="rubberId">Ластик</button></li>
+                <li><button class="buttonInstrument" id="pipetteId">Пипетка</button></li>
+            </ol>
+        </details>
+    </div>
+    <div>
+        <details>
+            <summary> <strong> Выберите цвет кисти </strong></summary>
+            <ol>
+                <li><button id="black">Черный</button></li>
+                <li><button id="purple">Фиолетовый</button></li>
+                <li><button id="red">Красный</button></li>
+                <li><button id="blue">Синий</button></li>
+                <li><button id="green">Зелёный</button></li>
+                <li><button id="yellow">Желтый</button></li>
+            </ol>
+        </details>
+    </div>
+</main>
+<footer>
+    <h4 class="textH4">Связаться с разаботчиками:</h4>
+    <button class="autorsLink" onclick="window.location.href='https://vk.com/vipryami_spinu_bro'">Фронтенд</button>
+    <button class="autorsLink" onclick="window.location.href='https://vk.com/ratiborik'">Бэкенд</button>
+</footer>
+<script src="script.js"></script>
+>>>>>>> 123
 </body>
 </html>

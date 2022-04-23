@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {margin: 0; padding: 0;}
 
 canvas {
@@ -125,3 +126,151 @@ canvas {
 .listInstrument {
     margin: 0px 0px 10px 20px;
 }
+=======
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: #5178ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 0px 32px 5px 171px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 15px;
+}
+button:hover {
+  background-color: white;
+  color: #5178ff;
+}
+button#clear {
+  background-color: #ff0000;
+}
+button#clear:hover {
+  background-color: orange;
+  color: white;
+}
+button#pencilId:hover {
+  background-color: lightgreen;
+  color: white;
+}
+button#markerId:hover {
+  background-color: lightcoral;
+  color: white;
+}
+button#brushId:hover {
+  background-color: lightblue;
+  color: white;
+}
+button#rubberId:hover {
+  background-color: lightseagreen;
+  color: white;
+}
+button#pipetteId:hover {
+  background-color: lightsalmon;
+  color: white;
+}
+buttonhover {
+  background-color: darkgray;
+  color: white;
+}
+
+#indicator {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 0px 32px 5px 310px;
+}
+
+.isWrite {
+  background-color: #5178ff !important;
+}
+
+.autorsLink {
+  padding: 10px 15px;
+  margin: 10px 5px 10px 171px;
+}
+
+.textH4 {
+  margin: 10px 5px 10px 171px;
+}
+
+summary {
+  margin: 0px 0px 10px 171px;
+}
+
+#sketch {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  object-fit: contain;
+  z-index: -1;
+}
+
+canvas {
+  display: block;
+  background-color: #c0c0c0;
+  margin: 0px 32px 0px 20px;
+}
+
+.sidenav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: 160px;
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #111;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.sidenav a.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+>>>>>>> 123
