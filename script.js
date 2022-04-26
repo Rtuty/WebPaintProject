@@ -18,12 +18,15 @@ window.onload = () => {
     const ctx = canvas.getContext('2d');
     const indicator = document.getElementById('indicator');
     const button = document.getElementById('deleteButton')
+    const historyDraw = document.getElementById('autoDraw')
 
     // Устанавливаем размер холста
     canvas.setAttribute('width',1500);
     canvas.setAttribute('height', 500);
 
     // Иннициализация свойств маркера
+
+
     var buttonMarker = document.getElementById("markerId")
     buttonMarker.addEventListener("click", (e) => marker());
     function marker () {
@@ -94,9 +97,9 @@ window.onload = () => {
 
     // Добавляем позиции X и Y мыши в массимы arrayX и arrayY
     function recordMousePos(e) {
-        posX.push(e.clientX-10);
+        posX.push(e.clientX-20);
         posY.push(e.clientY-45);
-        drawLine(e.clientX-10, e.clientY-45);
+        drawLine(e.clientX-20, e.clientY-45);
     }
 
     // Рисование линий
@@ -132,34 +135,35 @@ window.onload = () => {
             indicator.classList.remove('isWrite');
         }
     }
+    //Кнопка для просмотра истории рисования
+    var buttonDrawHistory = document.getElementById("autoDraw")
+    buttonDrawHistory.addEventListener("click",(e)=>autoDraw())
+    {   // Автоматическое рисование
+        function autoDraw() {
+            var sketch = document.getElementById("sketch");
+            var x = posX;
+            var y = posY;
 
-    // Автоматическое рисование
-    function autoDraw() {
-        var sketch = document.getElementById("sketch");
-        var x = posX;
-        var y = posY;
-
-        var drawing = setInterval(() => {
-            var currentX = x.shift();
-            var currentY = y.shift();
-            if (x.length <= 0 && y.length <= 0) {
-                clearInterval(drawing);
-                switchIndicator(true);
-                isRec = false;
-                newDraw = true;
-            }
-            else {
-                if(currentX == undefined && currentY == undefined) {
-                    ctx.beginPath();
+            var drawing = setInterval(() => {
+                var currentX = x.shift();
+                var currentY = y.shift();
+                if (x.length <= 0 && y.length <= 0) {
+                    clearInterval(drawing);
+                    switchIndicator(true);
+                    isRec = false;
+                    newDraw = true;
+                } else {
+                    if (currentX == undefined && currentY == undefined) {
+                        ctx.beginPath();
+                    } else {
+                        drawLine(currentX, currentY);
+                    }
                 }
-                else {
-                    drawLine(currentX, currentY);
-                }
-            }
-        }, 40);
+            }, 40);
 
-        if(sketch != null) {
-            sketch.style.visibility = 'hidden';
+            if (sketch != null) {
+                sketch.style.visibility = 'hidden';
+            }
         }
     }
 }
